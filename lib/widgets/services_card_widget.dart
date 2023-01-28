@@ -1,3 +1,4 @@
+import 'package:doctors_appointment_app/screens/doctors_screen.dart';
 import 'package:doctors_appointment_app/themes/colors.dart';
 import 'package:doctors_appointment_app/widgets/chip_widget.dart';
 import 'package:flutter/material.dart';
@@ -23,10 +24,9 @@ class ServicesCard extends StatelessWidget {
                 Text(
                   'SERVICES',
                   style: TextStyle(
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.bold,
-                    color: textColorBlue
-                  ),
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.bold,
+                      color: textColorBlue),
                 ),
                 Text(
                   'SEE ALL',
@@ -43,11 +43,21 @@ class ServicesCard extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [
-              ChipWidget(icon: Icons.coronavirus, text: 'Covid-19'),
-              ChipWidget(icon: Icons.person, text: 'Doctors'),
-              ChipWidget(icon: Icons.local_hospital, text: 'Hospitals'),
-              ChipWidget(icon: Icons.science, text: 'Medicine'),
+            children: [
+              ChipWidget(
+                  icon: Icons.coronavirus, text: 'Covid-19', onTap: () {}),
+              ChipWidget(
+                  icon: Icons.person,
+                  text: 'Doctors',
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DoctorsScreen()));
+                  }),
+              ChipWidget(
+                  icon: Icons.local_hospital, text: 'Hospitals', onTap: () {}),
+              ChipWidget(icon: Icons.science, text: 'Medicine', onTap: () {}),
             ],
           ),
         ],

@@ -1,4 +1,5 @@
 import 'package:doctors_appointment_app/screens/homepage.dart';
+import 'package:doctors_appointment_app/themes/colors.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +15,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Doc-o-point',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme:
+            ColorScheme.fromSwatch(primarySwatch: Colors.teal).copyWith(
+          primary: mainColor,
+        ),
       ),
       home: const HomePage(title: 'Doctor Appointment'),
     );
