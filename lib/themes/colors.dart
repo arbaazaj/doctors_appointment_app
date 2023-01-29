@@ -12,3 +12,4 @@ const shadowIconBlue = Color(0xFFe9f4ff);
 const shadowIconPink = Color(0xFFffe9ed);
 const iconColorBlue = Color(0xFF4895f0);
 const iconColorPink = Color(0xFFfd4a6e);
+const couponBackground = Color(0xFFf2f8ff);

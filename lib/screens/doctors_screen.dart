@@ -19,6 +19,10 @@ class _DoctorsScreenState extends State<DoctorsScreen> {
       backgroundColor: backgroundColor,
       appBar: AppBar(
         elevation: 2.0,
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(Icons.arrow_back_ios_new_rounded),
+        ),
         title: const Text('DOCTORS'),
         actions: [
           IconButton(
@@ -38,6 +42,8 @@ class _DoctorsScreenState extends State<DoctorsScreen> {
         child: Column(
           children: [
             const DoctorsCard(
+              bottomPadding: true,
+              isButtonVisible: true,
               isCardTitleEnabled: true,
               spaceHeightBetweenCards: 15.0,
               cardTitle: 'DOCTOR NEARBY',
@@ -51,6 +57,8 @@ class _DoctorsScreenState extends State<DoctorsScreen> {
               costOfService: 150,
             ),
             const DoctorsCard(
+              bottomPadding: true,
+              isButtonVisible: true,
               isCardTitleEnabled: true,
               spaceHeightBetweenCards: 15.0,
               cardTitle: 'RECOMMENDED',
@@ -71,6 +79,8 @@ class _DoctorsScreenState extends State<DoctorsScreen> {
               ),
             ),
             const DoctorsCard(
+              bottomPadding: true,
+              isButtonVisible: true,
               isCardTitleEnabled: false,
               spaceHeightBetweenCards: 0.0,
               cardTitle: '',

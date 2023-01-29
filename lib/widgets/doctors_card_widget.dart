@@ -1,3 +1,4 @@
+import 'package:doctors_appointment_app/screens/book_appointment.dart';
 import 'package:doctors_appointment_app/themes/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class DoctorsCard extends StatelessWidget {
       required this.likeablePercentage,
       required this.costOfService,
       required this.spaceHeightBetweenCards,
-      required this.isCardTitleEnabled});
+      required this.isCardTitleEnabled, required this.isButtonVisible, required this.bottomPadding});
 
   final String cardTitle;
   final String trailingText;
@@ -25,6 +26,8 @@ class DoctorsCard extends StatelessWidget {
   final int costOfService;
   final double spaceHeightBetweenCards;
   final bool isCardTitleEnabled;
+  final bool isButtonVisible;
+  final bool bottomPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -141,12 +144,12 @@ class DoctorsCard extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 20.0),
+                        bottomPadding ? const SizedBox(height: 20.0) : const SizedBox(height: 0.0),
                       ],
                     ),
                   ],
                 ),
-                Row(
+                isButtonVisible ? Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
@@ -182,12 +185,18 @@ class DoctorsCard extends StatelessWidget {
                                 RoundedRectangleBorder(
                                     borderRadius:
                                         BorderRadius.circular(32.0)))),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const BookAppointment()));
+                        },
                         child: const Text('Make an appointment'),
                       ),
                     ),
                   ],
-                ),
+                ) : const SizedBox(),
               ],
             ),
           ),
