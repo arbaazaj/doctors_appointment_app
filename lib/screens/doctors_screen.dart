@@ -1,6 +1,5 @@
 import 'package:doctors_appointment_app/themes/colors.dart';
 import 'package:doctors_appointment_app/widgets/doctors_card_widget.dart';
-import 'package:doctors_appointment_app/widgets/search_bar_widget.dart';
 import 'package:flutter/material.dart';
 
 class DoctorsScreen extends StatefulWidget {

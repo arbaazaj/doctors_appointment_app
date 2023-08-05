@@ -3,7 +3,6 @@ import 'package:doctors_appointment_app/themes/colors.dart';
 import 'package:doctors_appointment_app/widgets/custom_app_bar.dart';
 import 'package:doctors_appointment_app/widgets/custom_bottom_navbar_widget.dart';
 import 'package:doctors_appointment_app/widgets/news_card_widget.dart';
-import 'package:doctors_appointment_app/widgets/search_bar_widget.dart';
 import 'package:doctors_appointment_app/widgets/services_card_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -37,12 +36,12 @@ class _HomePageState extends State<HomePage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         buildTopView(context),
-        Flexible(
+        const Flexible(
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              children: const [
+              children: [
                 SizedBox(height: 15.0),
                 ServicesCard(),
                 SizedBox(height: 15.0),
