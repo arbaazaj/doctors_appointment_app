@@ -1,6 +1,6 @@
+import 'package:doctors_appointment_app/themes/colors.dart';
 import 'package:doctors_appointment_app/widgets/coupon_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:doctors_appointment_app/themes/colors.dart';
 
 class TotalCostCardWidget extends StatelessWidget {
   const TotalCostCardWidget({
@@ -17,13 +17,13 @@ class TotalCostCardWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Row(
+            const Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
                       'Total cost',
                       style: TextStyle(
@@ -42,7 +42,7 @@ class TotalCostCardWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                const Text(
+                Text(
                   '\$150',
                   style: TextStyle(
                     color: textColorBlue,
@@ -53,10 +53,10 @@ class TotalCostCardWidget extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20.0),
-            Row(
+            const Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Text(
                   'To pay',
                   style: TextStyle(

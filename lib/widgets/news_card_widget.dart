@@ -16,9 +16,9 @@ class NewsCard extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text(
                     'DAILY UPDATE',
                     style: TextStyle(
@@ -39,10 +39,10 @@ class NewsCard extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Flexible(
+                  const Flexible(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
+                      children: [
                         Text(
                           'Symptoms of Covid to watch out for',
                           style: TextStyle(

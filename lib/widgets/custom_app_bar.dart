@@ -15,16 +15,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Column(
+            const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Text(
                   '👋 Hello,',
                   style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 13,
-                      fontWeight: FontWeight.w400),
+                    color: Colors.white70,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 1.1
+                  ),
                 ),
                 SizedBox(
                   height: 5.0,
@@ -34,20 +36,27 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 17,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 1.2
                   ),
                 ),
               ],
             ),
-            CircleAvatar(
-              backgroundColor: mainColor,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(32.0),
-                child: Image.network(
-                  'https://picsum.photos/200/300',
-                  fit: BoxFit.fill,
-                  width: 40,
-                  height: 40,
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(160.0),
+                border: Border.all(color: textColorBlue)
+              ),
+              child: CircleAvatar(
+                backgroundColor: mainColor,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(32.0),
+                  child: Image.network(
+                    'https://picsum.photos/200/300',
+                    fit: BoxFit.fill,
+                    width: 40,
+                    height: 40,
+                  ),
                 ),
               ),
             ),

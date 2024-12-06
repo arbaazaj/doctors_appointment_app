@@ -6,8 +6,12 @@ class ChipWidget extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
 
-  const ChipWidget({Key? key, required this.icon, required this.text, required this.onTap})
-      : super(key: key);
+  const ChipWidget({
+    Key? key,
+    required this.icon,
+    required this.text,
+    required this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

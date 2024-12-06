@@ -27,11 +27,11 @@ class CouponWidget extends StatelessWidget {
             color: couponBackground,
             borderRadius: BorderRadius.circular(32.0),
           ),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+          child: const Padding(
+            padding: EdgeInsets.only(left: 16.0, right: 16.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Icon(Icons.local_offer, color: mainColor),
                 Text(
                   'Use promo code',

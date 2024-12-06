@@ -1,20 +1,23 @@
-import 'package:doctors_appointment_app/screens/book_appointment.dart';
 import 'package:doctors_appointment_app/themes/colors.dart';
 import 'package:flutter/material.dart';
 
 class DoctorsCard extends StatelessWidget {
-  const DoctorsCard(
-      {super.key,
-      required this.cardTitle,
-      required this.trailingText,
-      required this.profileImageSrc,
-      required this.doctorName,
-      required this.doctorProfession,
-      required this.yearOfExperience,
-      required this.likeablePercentage,
-      required this.costOfService,
-      required this.spaceHeightBetweenCards,
-      required this.isCardTitleEnabled, required this.isButtonVisible, required this.bottomPadding});
+  const DoctorsCard({
+    super.key,
+    required this.cardTitle,
+    required this.trailingText,
+    required this.profileImageSrc,
+    required this.doctorName,
+    required this.doctorProfession,
+    required this.yearOfExperience,
+    required this.likeablePercentage,
+    required this.costOfService,
+    required this.spaceHeightBetweenCards,
+    required this.isCardTitleEnabled,
+    required this.isButtonVisible,
+    required this.bottomPadding,
+    this.onPressed,
+  });
 
   final String cardTitle;
   final String trailingText;
@@ -28,6 +31,7 @@ class DoctorsCard extends StatelessWidget {
   final bool isCardTitleEnabled;
   final bool isButtonVisible;
   final bool bottomPadding;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -144,59 +148,61 @@ class DoctorsCard extends StatelessWidget {
                             ),
                           ],
                         ),
-                        bottomPadding ? const SizedBox(height: 20.0) : const SizedBox(height: 0.0),
+                        bottomPadding
+                            ? const SizedBox(height: 20.0)
+                            : const SizedBox(height: 0.0),
                       ],
                     ),
                   ],
                 ),
-                isButtonVisible ? Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Total fee',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: grey,
-                              fontSize: 13.0),
-                        ),
-                        const SizedBox(height: 5.0),
-                        Text(
-                          '\$$costOfService',
-                          style: const TextStyle(
-                              color: textColorBlue,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17.0),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(width: 30.0),
-                    Expanded(
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all(orangeColor),
-                            padding: MaterialStateProperty.all(
-                              const EdgeInsets.only(top: 16.0, bottom: 16.0),
+                isButtonVisible
+                    ? Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'Total fee',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: grey,
+                                    fontSize: 13.0),
+                              ),
+                              const SizedBox(height: 5.0),
+                              Text(
+                                '\$$costOfService',
+                                style: const TextStyle(
+                                    color: textColorBlue,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 17.0),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(width: 30.0),
+                          Expanded(
+                            child: ElevatedButton(
+                              style: ButtonStyle(
+                                  backgroundColor:
+                                      WidgetStateProperty.all(orangeColor),
+                                  padding: WidgetStateProperty.all(
+                                    const EdgeInsets.only(
+                                        top: 16.0, bottom: 16.0),
+                                  ),
+                                  shape: WidgetStateProperty.all(
+                                      RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(32.0)))),
+                              onPressed: onPressed,
+                              child: const Text(
+                                'Make an appointment',
+                                style: TextStyle(color: Colors.white),
+                              ),
                             ),
-                            shape: MaterialStateProperty.all(
-                                RoundedRectangleBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(32.0)))),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const BookAppointment()));
-                        },
-                        child: const Text('Make an appointment'),
-                      ),
-                    ),
-                  ],
-                ) : const SizedBox(),
+                          ),
+                        ],
+                      )
+                    : const SizedBox(),
               ],
             ),
           ),

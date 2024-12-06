@@ -16,11 +16,11 @@ class ServicesCard extends StatelessWidget {
       color: Colors.white,
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
+          const Padding(
+            padding: EdgeInsets.all(16.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Text(
                   'SERVICES',
                   style: TextStyle(
@@ -56,8 +56,15 @@ class ServicesCard extends StatelessWidget {
                             builder: (context) => const DoctorsScreen()));
                   }),
               ChipWidget(
-                  icon: Icons.local_hospital, text: 'Hospitals', onTap: () {}),
-              ChipWidget(icon: Icons.science, text: 'Medicine', onTap: () {}),
+                icon: Icons.local_hospital,
+                text: 'Hospitals',
+                onTap: () {},
+              ),
+              ChipWidget(
+                icon: Icons.science,
+                text: 'Medicine',
+                onTap: () {},
+              ),
             ],
           ),
         ],

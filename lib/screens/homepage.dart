@@ -7,7 +7,7 @@ import 'package:doctors_appointment_app/widgets/services_card_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key, required String title}) : super(key: key);
+  const HomePage({super.key, required String title});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -61,7 +61,32 @@ class _HomePageState extends State<HomePage> {
       color: mainColor,
       child: Column(
         children: [
-          SearchBar(controller: searchController),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: TextField(
+              decoration: InputDecoration(
+                prefixIconColor: grey,
+                prefixIcon: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Icon(
+                    Icons.search_outlined,
+                    size: 28.0,
+                  ),
+                ),
+                hintText: 'Search',
+                hintStyle: const TextStyle(
+                    color: grey,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.1),
+                fillColor: Colors.white,
+                filled: true,
+                border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(160.0)),
+              ),
+            ),
+          ),
           const SizedBox(height: 20.0),
           Padding(
             padding: const EdgeInsets.only(left: 16.0, right: 16.0),
